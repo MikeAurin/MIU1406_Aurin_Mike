@@ -1,0 +1,54 @@
+!SESSION 2014-06-02 15:32:07.083 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/MikeAurin/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/MikeAurin/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-06-02 15:32:29.877
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-06-02 15:32:31.284
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-06-02 15:32:31.284
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-06-02 15:32:31.284
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY org.eclipse.e4.ui.css.core 4 0 2014-06-02 15:32:42.644
+!MESSAGE CSS property 'maximize-visible' has been deprecated: renamed as swt-maximize-visible
+
+!ENTRY org.eclipse.e4.ui.css.core 4 0 2014-06-02 15:32:42.733
+!MESSAGE CSS property 'minimize-visible' has been deprecated: renamed as swt-minimize-visible
+
+!ENTRY com.aptana.core 4 128 2014-06-02 15:48:41.105
+!MESSAGE fatal: remote error: 
+  MikeAurin/MIU Projects is not a valid repository name
+  Email support@github.com for help
+
+!ENTRY com.aptana.core 4 128 2014-06-02 15:50:30.390
+!MESSAGE ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+!ENTRY com.aptana.core 4 1 2014-06-02 15:51:18.766
+!MESSAGE error: src refspec master does not match any.
+error: failed to push some refs to 'git@github.com:MikeAurin/MIU1406_Aurin_Mike.git'
+
+!ENTRY com.aptana.core 4 1 2014-06-02 15:52:09.739
+!MESSAGE error: src refspec master does not match any.
+error: failed to push some refs to 'git@github.com:MikeAurin/MIU1406_Aurin_Mike.git'
+
+!ENTRY com.aptana.core 4 128 2014-06-02 15:52:53.903
+!MESSAGE ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+!ENTRY com.aptana.core 4 1 2014-06-02 15:58:45.176
+!MESSAGE error: src refspec master does not match any.
+error: failed to push some refs to 'git@github.com:MikeAurin/MIU1406_Aurin_Mike'

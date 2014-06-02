@@ -1,7 +1,7 @@
 =run
 LAST_LAUNCH_TIMESTAMP=1401739339205
 MIU\:launchMode=run
-MIU\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
+MIU\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103

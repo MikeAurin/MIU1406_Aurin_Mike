@@ -1,0 +1,19 @@
+var myWindow = Ti.UI.createWindow({
+	backgroundImage: "background.png"
+});
+
+var myTitle = Ti.UI.createLabel({
+	text: "About Me",
+	font: {fontStyle: "Roboto", fontSize: 36},
+	align: "center",
+	top: 40
+});
+
+var startButton = Ti.UI.createButton({
+	width: "100%",
+	color: "white"
+});
+
+myWindow.add(myTitle, startButton);
+
+myWindow.open();

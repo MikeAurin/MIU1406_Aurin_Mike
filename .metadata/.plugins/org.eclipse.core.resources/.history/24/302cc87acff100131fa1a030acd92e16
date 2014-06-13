@@ -1,0 +1,13 @@
+var mainWindow = Ti.UI.createWindow({
+	title: "About Me"
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var information = Ti.UI.createTableView({
+	backgroundColor: "#fff"
+});
+
+navWindow.open();

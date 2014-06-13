@@ -1,0 +1,29 @@
+Ti.UI.setBackgroundImage("background.png");
+
+var mainWindow = Ti.UI.createWindow({
+	title: "About Me"
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var aboutMe = Ti.UI.createTableView({
+	top:0,
+	
+	});
+
+var name = Ti.UI.createTableViewSection({
+
+});
+
+var email = Ti.UI.createTableViewSection({
+	
+});
+
+var sections = [name,email];
+	aboutMe.setData(sections);
+	mainWindow.add(aboutMe);
+	
+navWindow.open();
+

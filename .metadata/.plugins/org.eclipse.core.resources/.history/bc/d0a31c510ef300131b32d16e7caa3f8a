@@ -1,0 +1,17 @@
+Ti.UI.setBackgroundImage("background.png");
+
+var JSON = require("JSON");
+
+var appWindow = Ti.UI.createWindow({
+	title: "Mike Aurin""
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: appWindow
+});
+
+var myTable = Ti.UI.createTableView({
+	style: Ti.UI.iPhone.TableViewStyle.GROUPED
+});
+
+navWindow.open();

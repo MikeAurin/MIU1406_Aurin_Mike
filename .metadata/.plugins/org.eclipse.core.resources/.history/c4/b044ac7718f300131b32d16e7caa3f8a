@@ -1,0 +1,54 @@
+
+ aboutMe = {
+	"info":{
+		"title": "My Information",
+		"me": [
+		    {
+				"question": "", 
+				"answer": ""
+			},
+			{
+				"question": "", 
+			    "answer": ""
+			},
+            {
+            	"question": "",
+            	"answer": ""
+            },
+            {
+            	"question": "",
+            	"answer": ""
+            },
+            {
+            	"question": "",
+            	"answer": ""
+            }, 
+            {
+            	"question": "", 
+            	"answer": ""
+            },
+            {
+            	"question": "", 
+            	"answer": ""
+            },
+            {
+            	"question": "", 
+            	"answer": ""
+            },
+            {
+            	"question": "", 
+            	"answer": ""
+            },
+            {
+            	"question": "", 
+            	"answer": ""
+            },
+            {
+            	"question": "", 
+            	"answer": ""
+            }
+		]
+	}
+};
+
+	exports.myInfo = aboutMe;

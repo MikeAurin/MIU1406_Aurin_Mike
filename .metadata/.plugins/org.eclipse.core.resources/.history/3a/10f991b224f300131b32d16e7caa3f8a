@@ -71,7 +71,7 @@ for(n in JSON.myInfo){
 	});
 
 	tableSection.add(infoRow);
-	infoRow.addEventListener("click", getInfo);
+	theRow.addEventListener("click", getInfo);
 	
 	};	
 };

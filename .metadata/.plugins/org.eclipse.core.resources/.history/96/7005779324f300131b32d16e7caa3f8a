@@ -64,14 +64,15 @@ var getInfo = function (){
 for(n in JSON.myInfo){
 
 	for(m in JSON.myInfo[n].required){
-		var infoRow = Ti.UI.createTableViewRow({
+		var theRow = Ti.UI.createTableViewRow({
 		title: JSON.myInfo[n].required[m].question,
 		desc: JSON.myInfo[n].required[m].answer,
 	    hasChild: true
 	});
 
-	tableSection.add(infoRow);
-	infoRow.addEventListener("click", getInfo);
+	tableSection.add(theRow);
+	theRow.addEventListener("click", getInfo);
+
 	
 	};	
 };

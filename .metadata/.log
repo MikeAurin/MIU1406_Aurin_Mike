@@ -336,3 +336,12 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/MikeAuri
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
 !SUBENTRY 1 org.eclipse.ui 2 0 2014-06-13 14:02:35.267
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY com.aptana.core 4 1 2014-06-13 14:25:22.783
+!MESSAGE To git@github.com:MikeAurin/MIU1406_Aurin_Mike
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:MikeAurin/MIU1406_Aurin_Mike'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.

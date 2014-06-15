@@ -1,6 +1,6 @@
 =run
 About\ Me\ MIU\:launchMode=run
-About\ Me\ MIU\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
+About\ Me\ MIU\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 LAST_LAUNCH_TIMESTAMP=1402843669332
 MIU\:launchMode=run
 MIU\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)

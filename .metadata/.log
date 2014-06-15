@@ -480,3 +480,6 @@ org.eclipse.core.runtime.CoreException: The file does not exist.
 
 !ENTRY org.eclipse.e4.ui.css.core 4 0 2014-06-15 18:57:16.895
 !MESSAGE CSS property 'minimize-visible' has been deprecated: renamed as swt-minimize-visible
+
+!ENTRY com.appcelerator.titanium.android.core 4 0 2014-06-15 19:28:09.316
+!MESSAGE There are no Android devices connected

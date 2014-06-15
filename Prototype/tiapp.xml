@@ -5,13 +5,13 @@
     <version>1.0</version>
     <publisher>MikeAurin</publisher>
     <url>http://</url>
-    <description>not specified</description>
+    <description>Prototype MIU</description>
     <copyright>2014 by MikeAurin</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>ac6acb98-b846-40fb-82de-48c2d5dadee0</guid>
+    <guid>dbec7c85-b560-4ebc-a2bd-8964525ff1ed</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>

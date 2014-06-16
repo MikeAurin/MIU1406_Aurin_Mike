@@ -1,0 +1,11 @@
+var win =Ti.UI.currentWindow;
+
+var logo = Ti.UI.createImageView({
+	width: "80%",
+	borderRadius: 3,
+	height: 30,
+	top: 40,
+	color: "red"
+});
+
+win.add(logo);

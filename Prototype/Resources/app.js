@@ -4,7 +4,8 @@ var tabGroup = Titanium.UI.createTabGroup();
 
 var win1 = Titanium.UI.createWindow({  
     title:'New Releases',
-    backgroundColor:'#fff'
+    backgroundColor:'#fff',
+    url: "newRelease.js"
 });
 var tab1 = Titanium.UI.createTab({  
     icon:'KS_nav_ui.png',
@@ -25,7 +26,7 @@ win1.add(label1);
 var win2 = Titanium.UI.createWindow({  
     title:'Recommendations',
     backgroundColor:'#fff',
-    url: "data.js",
+    url: "recommend.js",
 });
 var tab2 = Titanium.UI.createTab({  
     icon:'KS_nav_ui.png',
@@ -46,7 +47,8 @@ win2.add(label2);
 
 var win3 = Ti.UI.createWindow({
 	title: "My Picks",
-	backgroundColor: "#fff"
+	backgroundColor: "#fff",
+	url: "myPicks.js"
 });
 
 var tab3 =Ti.UI.createTab({

@@ -1,0 +1,38 @@
+Titanium.UI.setBackgroundColor('red');
+
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "white"
+});
+
+var logo = Ti.UI.createLabel({
+	backgroundImage: "redbox.png",
+	top: 50,
+	height: 120,
+	width: "90%"
+});
+
+var logIn = Ti.UI.createButton({
+	width: "60%",
+	bottom: 10,
+	height: 50,
+	title: "Log In",
+	borderRadius: 6,
+	color: "white",
+	font: {fontFamily: "Verdana", fontSize: 22},
+	backgroundColor: "red"
+});
+
+var signUp = Ti.UI.createButton({
+	width: "60%",
+	bottom: 80,
+	height: 50,
+	title: " Sign Up",
+	borderRadius: 6,
+	color: "white",
+	font: {fontFamily: "Verdana", fontSize: 22},
+	backgroundColor: "red"
+});
+
+
+mainWin.add(logo, logIn, signUp);
+mainWin.open();

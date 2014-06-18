@@ -1,0 +1,5 @@
+var rentWindow = Ti.UI.createWindow({
+	backgroundColor: "Blue"
+});
+
+open.rentWindow();

@@ -1,9 +1,0 @@
-var win =Ti.UI.currentWindow;
-
-alert("Test");
-
-var table = Ti.UI.createTableView({
-	
-});
-
-

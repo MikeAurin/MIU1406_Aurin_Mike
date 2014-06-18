@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-	<string name="newReleases">New Releases</string>	
-	<string name="recommended">Recommended</string>
-	<string name="openWindow">Open New Window</string>
-	<string name="newWindow">New Window</string>
-	<string name="myPicks">My Picks</string>
-</resources>

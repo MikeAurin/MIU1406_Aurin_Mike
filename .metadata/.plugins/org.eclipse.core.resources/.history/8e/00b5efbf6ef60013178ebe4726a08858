@@ -1,0 +1,19 @@
+var menu = Ti.UI.createWindow({
+	backgroundColor: "#d92332"
+});
+
+var recoButton = Ti.UI.createButton({
+	top: 20,
+	left: 0,
+	width: 120,
+	height: 50,
+	title: "Recommendations",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white",
+});
+
+menu.add(recoButton);
+menu.open();

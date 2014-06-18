@@ -1,0 +1,30 @@
+var menu = Ti.UI.createWindow({
+	backgroundColor: "#d92332"
+});
+
+var newButton = Ti.UI.createButton({
+	top: 20,
+	left: 0,
+	width: 120,
+	height: 50,
+	title: "New Releases",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white",
+});
+
+var suggestButton = Ti.UI.createLabel({
+	top: 20,
+	left: 120,
+	width: 120,
+	height: 50,
+	title: "Suggested",
+	color: "#d92332",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "white",
+});
+
+menu.add(newButton, suggestButton);
+menu.open();

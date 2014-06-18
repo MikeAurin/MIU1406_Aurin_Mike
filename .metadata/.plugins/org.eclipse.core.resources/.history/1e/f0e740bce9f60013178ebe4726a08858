@@ -1,0 +1,22 @@
+var rentWindow = Ti.UI.createWindow({
+	backgroundColor: "d92332"
+});
+
+var thanks = Ti.UI.createLabel({
+	font: {fontFamily: "Verdana", fontSize: 22, fontWeight: "bold"},
+	text: "Thank you!",
+	color: "white",
+	textAlign: "center",
+	top: 40
+});
+
+var confirm = Ti.UI.createLabel({
+	font: {fontFamily: "Verdana", fontSize: 18},
+	text: "Your rental will arrive at your address soon.",
+	color: "white",
+	textAlign: "center",
+	top: 65
+});
+
+rentWindow.add(thanks, confirm);
+rentWindow.open();

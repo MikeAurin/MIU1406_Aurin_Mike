@@ -1,0 +1,39 @@
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+var margin = 10;
+var trueCanvasWidth = (pWidth - (margin * 2));
+var size = 67;
+var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "proj3images");
+var imageFiles = imagesFolder.getDirectoryListing();
+
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#d92332",
+	title: "New Releases"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin
+});
+
+var backButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "white",
+	color: "#d92332",
+	title: "Back",
+	textAlign: "center"
+});
+
+var closeNewRelease = function(){
+	var goBack = require("info");
+	mainWin.close();
+};
+
+backButton.addEventListener("click", closeNewRelease);
+
+mainWin.add(backButton);
+
+navWin.open();
+
+

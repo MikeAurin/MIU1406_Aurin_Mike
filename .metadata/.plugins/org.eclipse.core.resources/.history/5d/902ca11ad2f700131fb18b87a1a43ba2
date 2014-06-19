@@ -1,0 +1,21 @@
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#d92332"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin
+});
+
+var backButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "white",
+	color: "#d92332",
+	title: "Back",
+	textAlign: "center",
+});
+
+mainWin.add(backButton);
+
+navWin.open();

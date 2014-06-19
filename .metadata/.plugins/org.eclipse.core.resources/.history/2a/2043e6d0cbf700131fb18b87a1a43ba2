@@ -1,0 +1,38 @@
+
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#d92332",
+	title: "New Releases"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin
+});
+
+var backButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "white",
+	color: "#d92332",
+	title: "Back",
+	textAlign: "center"
+});
+
+var thumbnail = Ti.UI.createImageView({
+	image: "images/placeholder.png",
+	top: 20,
+	left: 20,
+});
+
+var closeNewRelease = function(){
+	var goBack = require("info");
+	navWin.close();
+};
+
+backButton.addEventListener("click", closeNewRelease, thumbnail);
+
+mainWin.add(backButton);
+
+navWin.open();
+
+

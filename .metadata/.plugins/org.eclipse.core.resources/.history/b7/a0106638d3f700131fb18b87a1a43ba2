@@ -1,0 +1,347 @@
+
+var movies = {
+	"42": {
+		"headTitle": "42",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "4 Stars",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Drama"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Chadwick Boseman, Harrison Ford, and Nichole Beharie"
+			}, 
+			{
+				"title": "Director",
+				"info": "Brian Helgeland"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Warner"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "In 1946, Branch Rickey put himself at the forefront of history when he signed Jackie Robinson to the legendary Brooklyn Dodgers, breaking the MLB's infamous color line.  The deal put both Robinson and Rickey in the firing line of the public, press and other players.  Number 42 let his talent on the field do the talking and ultimately wins over the fans and his teammates and paves the way for others to follow."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'travelm8' rated this movie 5 stars on August 29th, 2013.  'Extremely well done and realistic.                      - User 'faircritic2' rated this movie 5 stars on August 29th, 2013.   'This was a great movie...depicting real times....a must see...wheter you like baseball or not....Excellent movie to add to your collection.'"
+			},
+			{
+				"title": "Image",
+				"info": "Resources/images/lego"
+			}
+		]
+	},
+	"21 Jump Street": {
+		"headTitle": "21 Jump Street",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "3.5",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Action/Comedy"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Channing Tatum, Jonah Hill and Brie Larson"
+			}, 
+			{
+				"title": "Director",
+				"info": "Phil Lord"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Sony"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "Schmidt and Jenko are more than ready to leave their adolescent problems behind them.  Joining the police force and the secret Jump Street unit, they use their youthful appearances to go undercover in a local highschool."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'Whitewing' rated this movie 3.5 stars on June 6th, 2014.  'Fun Movie.  We enjoyed the storyline and the surprise cameo was cool.  Very entertaining film.'         - User 'Bionicbaby1' rated this movie 3.2 stars on June 6th, 2014.  'Awesome movie.  Very funny.'"
+			} 
+		]
+	},
+	"Ted": {
+		"headTitle": "Ted",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "2.5",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Comedy"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Mark Wahlberg, Mila Kunis and Seth MacFarlane."
+			}, 
+			{
+				"title": "Director",
+				"info": "Seth MacFarlane"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Universal"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "John Bennet is a grown man whose simple childhood wish brought	his cherished teddy bear to life.  Almost 30 years later, the fairy tale is very much over.  Ted is reluctant to leave John's side to the increasing annoyance of John's only-so-patient girlfriend, Lori."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'Confunit' rated this movie 2.1 stars on June 7th, 2014.  'Its as expected - sophomoric humor - Seth MacFarlane's humor takes childish themes in adult situations...it is rate R so why anyone would think it's a childs film is baflfing.''         - User 'meemaw01' rated this movie 0.3 stars on June 7th, 2014.  'With the talking teddy bear I thought this would be a good kid movie WRONG DONT LET A CHILD WATCH THIS'"
+			} 
+		]
+	},
+	"TDKR": {
+		"headTitle": "The Dark Knight",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "3.5",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Action"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Christian Bale, Gary Oldman and Tom Hardy"
+			}, 
+			{
+				"title": "Director",
+				"info": "Christopher Nolan"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Warner"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "Eight years following the disappearance of Batman into the night, a cunning cat burglar with a mysterious agenda and a masked terrorist, Bane whose ruthless plans for Gotham force Bruce out of his self-imposed exile."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'CyclingTraining' rated this movie 3 stars on June 4th, 2014.  'Not the best of the Batman series, not the worst.  Sets up the next one niecely and does have it's moements.  -  User 'Hypnus' rated this movie 3 stars on June 2nd, 2014.  'Very well done.  If you're a Batman fan you should really enjoy it.'"
+			} 
+		]
+	},
+	"Spider-man": {
+		"headTitle": "Spider-Man",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "3.5",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Action"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Andrew Garfield, Emma Stone and Rhys Ifans"
+			}, 
+			{
+				"title": "Director",
+				"info": "Marc Webb"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Sony"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "Peter Parker is an outcast high schooler who was abandoned by his parents as a boy, leaving him to be raised by his Uncle Ben and Aunt May.  As Peter discovers a mysterious briefcase that belonged to his father, he begins a quest to understand his parents' disappearance leading his straight to OsCorp."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'Maryxoxoxoxoxo' rated this movie 5 stars on May 31st, 2014.  'Good movie...'    - User ' 7generations' rated this movie 5 stars on May 28th, 2014.  'I think the little spidey fellas will really enjoy this great movie!'"
+			} 
+		]
+	},
+		"American Hustle": {
+		"headTitle": "American Hustle",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "2.5",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Drama"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Christian Bale, Bradley Cooper and Amy Adams"
+			}, 
+			{
+				"title": "Director",
+				"info": "David O. Russel"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Sony"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "Brilliant con man Irving Rosenfield, along with his equally cunning a seductive British partner Sydney Prosser, is forced to work for a wild FBI agent that pushes them into a world of Jersey power-brokers and mafia that's as dangerous as it is enchanting."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'PleaseRewind' rated this movie 2.1 stars on June 7th, 2014.  ' I wanted to like this movie.  Saw it in theaters and rented again and it's just not that food.  It's average at best in my opinion.'  - User 'goulasde' rated this movie 3 stars on June 5th, 2014.  ' I don't know what all the hype was about.  There just isn't much substance to this movie.'"
+			} 
+		]
+	},
+};
+
+var getDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		title: this.text,
+		backgroundColor: "white"
+	});
+	var detailText = Ti.UI.createLabel({
+		text: this.details,
+		top: 30,
+		font: {fontSize: 40},
+		left: 15,
+		right: 15
+	});
+	detailWindow.add(detailText);
+	navWindow.openWindow(detailWindow);
+};
+
+var makeUI = function(){
+	var spacing = 30;
+	for(n in movies){
+		var titleLabel = Ti.UI.createLabel({
+			text: movies[n].headTitle,
+			left: 30,
+			right: 30,
+			borderRadius: 5,
+			top: spacing,
+			height: 25,
+			textAlign: "center",
+			backgroundColor: "#333",
+			font: {fontSize: 22, fontFamily: "Verdana", fontWeight: "bold"},
+			color: "#fafafa"
+		});
+		spacing = titleLabel.top + titleLabel.height + 10;
+		for(m in movies[n].details){
+			var itemLabel = Ti.UI.createLabel({
+				text: movies[n].details[m].title,
+				details: movies[n].details[m].info,
+				image: movies[n].details[m].image,
+				left: 30,
+				right: 30,
+				borderRadius: 5,
+				textAlign: "center",
+				top: spacing,
+				height: 25,
+				backgroundColor: "#ffffff",
+				font: {fontSize: 22, fontFamily: "Verdana"},
+				color: "#333"
+			});
+			mainWindow.add(itemLabel);
+			spacing = itemLabel.top + itemLabel.height + 10;
+			itemLabel.addEventListener("click", getDetail);
+		}
+		mainWindow.add(titleLabel);
+		spacing = itemLabel.top + itemLabel.height + 40;
+	}
+};
+
+var mainWindow = Ti.UI.createWindow({
+	title: "My Movies",
+	backgroundColor: "#d92332"
+});
+
+var newReleaseButton = Ti.UI.createButton({
+	bottom: 0,
+	left: 0,
+	width: "50%",
+	height: 50,
+	title: "New Releases",
+	textAlign: "center",
+	color: "#d92332",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "white",
+	border: 2,
+	borderColor: "d92332",
+});
+
+var suggestedButton = Ti.UI.createButton({
+	bottom: 0,
+	right: 0,
+	width: "50%",
+	height: 50,
+	title: "Suggestions",
+	textAlign: "center",
+	color: "#d92332",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "white",
+	border: 2,
+	borderColor: "d92332",
+});
+
+
+var viewContainer = Ti.UI.createScrollView({
+	top: 0,
+	showVerticalScrollIndicator: true,
+	layout: "horizontal"
+});
+
+mainWindow.add(viewContainer);
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow	
+});
+
+makeUI();
+
+var newRelease =function(){
+	var release = require("newRelease");
+};
+
+var suggested = function(){
+	var suggestedFunction = require("suggestedPage");
+};
+
+newReleaseButton.addEventListener("click", newRelease);
+suggestedButton.addEventListener("click", suggested);
+
+navWindow.add(newReleaseButton, suggestedButton);
+navWindow.open();

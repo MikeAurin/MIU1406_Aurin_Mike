@@ -1,0 +1,28 @@
+var mainWin = Ti.UI.createWindow({
+	layout: "horizontal",
+	backgroundColor: "#d92332",
+	title: "New Releases"
+});
+
+var backButton = Ti.UI.createLabel({
+	bottom: 0,
+	height: 50,
+	width: "%100",
+	backgroundColor: "white",
+	color: "#d92332",
+	text: "Back",
+	textAlign: "center"
+});
+
+var closeNewRelease = function(){
+	var goBack = require("info");
+	mainWin.close();
+};
+
+backButton.addEventListener("click", closeNewRelease);
+
+mainWin.add(backButton);
+
+mainWin.open();
+
+

@@ -1,0 +1,29 @@
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#d92332",
+	title: "Suggestions"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin
+});
+
+var backButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "white",
+	color: "#d92332",
+	title: "Back",
+	textAlign: "center",
+});
+
+var closeNewRelease = function(){
+	var goBack = require("info");
+	navWin.close();
+};
+
+backButton.addEventListener("click", closeNewRelease);
+
+mainWin.add(backButton);
+
+navWin.open();

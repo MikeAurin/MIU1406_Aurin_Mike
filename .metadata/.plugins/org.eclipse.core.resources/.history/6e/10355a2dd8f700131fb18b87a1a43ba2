@@ -1,0 +1,129 @@
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#d92332",
+	title: "Suggestions"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin
+});
+
+var backButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "white",
+	color: "#d92332",
+	title: "Back",
+	textAlign: "center",
+});
+
+var closeNewRelease = function(){
+	var goBack = require("info");
+	navWin.close();
+};
+
+var universal = [
+	{title: "Rip Ride Rockit", description: "A high speed rollercoaster with a music them.  Guests can pick a song from a preselected group of genres before riding the ride.  Also has the world's largest non-inverted loop. "}, 
+	{title: "Twister: Ride It Out", description: "Guests step onto a live sound stage as they experience the sounds, sights and feelings of a real life tornado."},
+	{title: "Disaster", description: "Guests are cast as extras for Mr. Kincaid's next big disaster movie, 'Mutha Nature'.  Climb aboard a subway train and prepare to sit through a. 8.0 earthquake deep below the heart of downtown Los Angeles."},
+	{title: "Men in Black: Alien Attack", description: "Alright recruits, suit up.  Aliens have crash landed in the heart of Manhatten and it's up to you to clean up the mess.  Aim for the thermal exhaust ports!'"}
+];
+
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#d92332"
+});
+
+var parks = Ti.UI.createTableView({
+	top: 20
+});
+
+if(Ti.Platform.name === "iPhone OS"){
+	parks.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+// Table View Section
+var universalSection = Ti.UI.createTableViewSection({
+	headerTitle: "Universal Studios"
+});
+
+var getDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		backgroundColor: "#f5f5f5"
+	});
+	
+	var detailTitleView = Ti.UI.createView({
+		height: 65,
+		backgroundColor: "#fff",
+		top: 0
+	});
+	
+	var detailBorder = Ti.UI.createView({
+		backgroundColor: "#dbdbdb",
+		height: 1,
+		top: detailTitleView.height + detailTitleView.top
+	});
+	
+	var detailTitleLabel = Ti.UI.createLabel({
+		text: this.title,
+		font: {fontSize: 20, fontFamily: "Verdana", fontWeight: "bold"},
+		top: 30,
+		width: "100%", 
+		textAlign: "center"
+	});
+	
+	var detailText = Ti.UI.createLabel({
+		text: this.desc,
+		font: {fontSize: 14, fontFamily: "Verdana"},
+		top : detailBorder.height + detailBorder.top + 40,
+		left: 10,
+		right: 10
+	});
+	
+	var closeButton = Ti.UI.createLabel({
+		backgroundColor: "#333",
+		text: " Close Window",
+		color: "#fff",
+		height: 50,
+		font: {fontSize: 12, fontFamily: "Arial"},
+		width: "100%",
+		bottom: 0,
+		textAlign: "center",
+		});
+
+	var closeWindow = function(){
+		detailWindow.close({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+	};
+
+	closeButton.addEventListener("click", closeWindow);
+
+	detailTitleView.add(detailTitleLabel);
+	detailWindow.add(detailTitleView, detailBorder, detailText, closeButton);
+	
+	detailWindow.open({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+
+};
+
+for(var i=0, j=universal.length; i<j; i++){
+	var tableRow = Ti.UI.createTableViewRow({
+		title: universal[i].title,
+		desc: universal[i].description,
+		hasDetail:true
+	});
+	universalSection.add(tableRow);
+	tableRow.addEventListener("click", getDetail);
+} 
+
+var parksSections = [universalSection];
+
+parks.setData(parksSections);
+
+
+
+mainWin.add(parks);
+; 
+backButton.addEventListener("click", closeNewRelease);
+
+mainWin.add(backButton);
+
+navWin.open();

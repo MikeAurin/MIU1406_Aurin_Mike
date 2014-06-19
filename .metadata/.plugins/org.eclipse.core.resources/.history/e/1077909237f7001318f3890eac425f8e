@@ -1,0 +1,47 @@
+var suggestScreen = Ti.UI.createWindow({
+	backgroundColor: "#d92332"
+});
+
+// Three main application Buttons
+var newReleaseButton = Ti.UI.createButton({
+	top: 20,
+	left: 2,
+	width: 105,
+	height: 50,
+	title: "New Releases",
+	textAlign: "center",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white",
+});
+
+var suggestButton = Ti.UI.createLabel({
+	top: 20,
+	left: 105,
+	width: 105,
+	textAlign: "center",
+	height: 50,
+	text: "Suggested",
+	color: "#d92332",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "white",
+});
+
+var myPicksButton = Ti.UI.createButton({
+	top: 20,
+	left: 210,
+	width: 105,
+	textAlign: "center",
+	height: 50,
+	title: "My Picks",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white",
+});
+
+suggestScreen.add(newReleaseButton, suggestButton, myPicksButton);
+suggestScreen.open();

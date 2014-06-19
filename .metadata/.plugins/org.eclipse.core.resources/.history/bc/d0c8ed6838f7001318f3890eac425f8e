@@ -1,0 +1,27 @@
+
+// Movie Array for Main screen
+var movieList = [
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."}, 
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."},
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."},
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."}
+];
+
+for(var i=0, j=movieList.length; i<j; i++){
+	var tableRow = Ti.UI.createTableViewRow({
+		title: movieList[i].title,
+		desc: movieList[i].description,
+		hasDetail:true
+	});
+	movieTable.add(tableRow);
+	tableRow.addEventListener("click", getDetail);
+} 
+
+	if(Ti.Platform.name === "iPhone OS"){
+		tableRow.hasChild = false;
+		tableRow.hasDetail = true;
+	}
+ 
+var movieSection = [movieTable];
+
+movies.setData(movieSection);

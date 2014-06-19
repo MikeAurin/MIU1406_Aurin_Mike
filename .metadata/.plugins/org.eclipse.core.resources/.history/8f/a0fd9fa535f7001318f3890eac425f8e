@@ -1,0 +1,180 @@
+var suggestScreen = Ti.UI.createWindow({
+	backgroundColor: "#d92332"
+});
+
+// Three main application Buttons
+var newReleaseButton = Ti.UI.createButton({
+	top: 20,
+	left: 2,
+	width: 105,
+	height: 50,
+	title: "New Releases",
+	textAlign: "center",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white",
+});
+
+var suggestButton = Ti.UI.createLabel({
+	top: 20,
+	left: 105,
+	width: 105,
+	textAlign: "center",
+	height: 50,
+	text: "Suggested",
+	color: "#d92332",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "white",
+});
+
+var myPicksButton = Ti.UI.createButton({
+	top: 20,
+	left: 210,
+	width: 105,
+	textAlign: "center",
+	height: 50,
+	title: "My Picks",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white",
+});
+
+// Movie Array for Main screen
+var movieList = [
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."}, 
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."},
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."},
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."}
+];
+
+// Table for Main Screen
+var movies = Ti.UI.createTableView({
+	top: 70
+});
+
+if(Ti.Platform.name === "iPhone OS"){
+	movies.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+// Table View Section
+var movieTable = Ti.UI.createTableViewSection({
+	headerTitle: "Movies based on your viewing history",
+});
+
+
+var getDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		backgroundColor: "#f5f5f5",
+		top: 55
+	});
+
+	var detailTitleView = Ti.UI.createView({
+		height: 20,
+		backgroundColor: "#fff",
+		top: 0
+	});
+
+	var detailBorder = Ti.UI.createView({
+		backgroundColor: "#dbdbdb",
+		height: 1,
+		top: detailTitleView.height + detailTitleView.top
+	});
+
+	var detailTitleLabel = Ti.UI.createLabel({
+		text: this.title,
+		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+		top: 30,
+		width: "100%", 
+		textAlign: "center"
+	});
+
+	var detailText = Ti.UI.createLabel({
+		text: this.desc,
+		font: {fontSize: 14, fontFamily: "Arial"},
+		top : detailBorder.height + detailBorder.top + 40,
+		left: 10,
+		right: 10
+	});
+
+	var backButton = Ti.UI.createButton({
+		backgroundColor: "#333",
+		title: "Back",
+		color: "#fff",
+		height: 50,
+		font: {fontSize: 12, fontFamily: "Verdana"},
+		width: "100%",
+		bottom: 0,
+		textAlign: "center"
+		});
+
+	var rentButton = Ti.UI.createButton({
+		backgroundColor: "#333",
+		title: "Rent This Movie",
+		color: "#fff",
+		height: 50,
+		font: {fontSize: 12, fontFamily: "Verdana"},
+		width: "100%",
+		bottom: 52,
+		textAlign: "center"
+	});
+};
+
+// Table data loop 
+for(var i=0, j=movieList.length; i<j; i++){
+	var tableRow = Ti.UI.createTableViewRow({
+		title: movieList[i].title,
+		desc: movieList[i].description,
+		hasDetail:true
+	});
+	movieTable.add(tableRow);
+	tableRow.addEventListener("click", getDetail);
+} 
+
+	if(Ti.Platform.name === "iPhone OS"){
+		tableRow.hasChild = false;
+		tableRow.hasDetail = true;
+	}
+ 
+var movieSection = [movieTable];
+
+movies.setData(movieSection);
+
+
+// Button Functions
+
+var closeWindow = function(){
+	detailWindow.close({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+};
+
+var openRent = function(){
+	var rent = require("rentScreen");
+};
+
+var openNewRelease =function(){
+	var release = require("newRelease");
+};
+
+var openMyPicks = function(){
+	var myPickScreen = require("myPicks");
+};
+
+
+myPicksButton.addEventListener("click", openMyPicks);
+newReleaseButton.addEventListener("click", openNewRelease);
+backButton.addEventListener("click", closeWindow);
+rentButton.addEventListener("click", openRent);
+
+detailTitleView.add(detailTitleLabel);
+detailWindow.add(detailTitleView, detailBorder, detailText, backButton, rentButton);
+
+detailWindow.open({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+
+};
+
+
+suggestScreen.add(newReleaseButton, suggestButton, myPicksButton, movies);
+suggestScreen.open();

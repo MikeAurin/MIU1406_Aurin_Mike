@@ -1,0 +1,157 @@
+
+var movies = {
+	"42": {
+		"headTitle": "42",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "4 Stars",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Drama"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Chadwick Boseman, Harrison Ford, and Nichole Beharie"
+			}, 
+			{
+				"title": "Director",
+				"info": "Brian Helgeland"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Warner"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "In 1946, Branch Rickey put himself at the forefront of history when he signed Jackie Robinson to the legendary Brooklyn Dodgers, breaking the MLB's infamous color line.  The deal put both Robinson and Rickey in the firing line of the public, press and other players.  Number 42 let his talent on the field do the talking and ultimately wins over the fans and his teammates and paves the way for others to follow."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'travelm8' rated this movie 5 stars on August 29th, 2013.  'Extremely well done and realistic.                      - User 'faircritic2' rated this movie 5 stars on August 29th, 2013.   'This was a great movie...depicting real times....a must see...wheter you like baseball or not....Excellent movie to add to your collection.'"
+			},
+			{
+				"title": "Image",
+				"info": "images/lego.jpg"
+			}
+		]
+	},
+	"21 Jump Street": {
+		"headTitle": "21 Jump Street",
+		"details": [
+			{
+				"title": "Rating", 
+				"info": "3.5",
+			}, 
+			{
+				"title": "Genre", 
+				"info": "Action/Comedy"
+			}, 
+			{
+				"title": "Cast",
+				"info": "Channing Tatum, Jonah Hill and Brie Larson"
+			}, 
+			{
+				"title": "Director",
+				"info": "Phil Lord"
+			}, 
+			{
+				"title": "Studio", 
+				"info": "Sony"
+			},
+			{
+				"title": "Format",
+				"info": "Widescreen"
+			},
+			{
+				"title": "Synopsis",
+				"info": "Schmidt and Jenko are more than ready to leave their adolescent problems behind them.  Joining the police force and the secret Jump Street unit, they use their youthful appearances to go undercover in a local highschool."
+			},
+			{
+				"title": "Reviews",
+				"info": "- User 'Whitewing' rated this movie 3.5 stars on June 6th, 2014.  'Fun Movie.  We enjoyed the storyline and the surprise cameo was cool.  Very entertaining film.'         - User 'Bionicbaby1' rated this movie 3.2 stars on June 6th, 2014.  'Awesome movie.  Very funny.'"
+			} 
+		]
+	}
+};
+
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Band Members",
+	backgroundColor: "black"
+});
+
+var scrollView = Ti.UI.createScrollView({
+	backgroundColor: "white"
+});
+
+mainWindow.add(scrollView);
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow	
+});
+
+
+var getDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		title: this.text,
+		backgroundColor: "white"
+	});
+	var detailText = Ti.UI.createLabel({
+		text: this.details,
+		top: 30,
+		left: 15,
+		right: 15
+	});
+	detailWindow.add(detailText);
+	navWindow.openWindow(detailWindow);
+};
+
+var makeUI = function(){
+	var spacing = 30;
+	for(n in movies){
+		var titleLabel = Ti.UI.createLabel({
+			text: movies[n].headTitle,
+			left: 30,
+			right: 30,
+			borderRadius: 5,
+			top: spacing,
+			height: 25,
+			textAlign: "center",
+			backgroundColor: "#333",
+			font: {fontSize: 22, fontFamily: "Verdana", fontWeight: "bold"},
+			color: "#fafafa"
+		});
+		spacing = titleLabel.top + titleLabel.height + 10;
+		for(m in movies[n].details){
+			var itemLabel = Ti.UI.createLabel({
+				text: movies[n].details[m].title,
+				details: movies[n].details[m].info,
+				image: movies.n.details[m].image
+				left: 30,
+				right: 30,
+				borderRadius: 5,
+				textAlign: "center",
+				top: spacing,
+				height: 25,
+				backgroundColor: "#ffffff",
+				font: {fontSize: 22, fontFamily: "Verdana"},
+				color: "#333"
+			});
+			mainWindow.add(itemLabel);
+			spacing = itemLabel.top + itemLabel.height + 10;
+			itemLabel.addEventListener("click", getDetail);
+		}
+		mainWindow.add(titleLabel);
+		spacing = itemLabel.top + itemLabel.height + 40;
+	}
+};
+
+makeUI();
+
+navWindow.open();

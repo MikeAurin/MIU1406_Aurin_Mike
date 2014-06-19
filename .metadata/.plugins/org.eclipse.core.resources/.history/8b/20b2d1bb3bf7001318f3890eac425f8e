@@ -1,0 +1,66 @@
+var suggestScreen =Ti.UI.createWindow({
+	backgroundColor: "#d92332"
+});
+
+var newReleaseButton = Ti.UI.createButton({
+	top: 20,
+	left: 2,
+	width: 105,
+	height: 50,
+	title: "New Release",
+	textAlign: "center",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white"
+});
+
+var suggestButton = Ti.UI.createLabel({
+	top: 20,
+	left: 105,
+	width: 105,
+	textAlign: "center",
+	height: 50,
+	text: "Suggested",
+	color: "#d92332",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "white",
+});
+
+var myPicksButton = Ti.UI.createButton({
+	top: 20,
+	left: 210,
+	width: 105,
+	textAlign: "center",
+	height: 50,
+	title: "My Picks",
+	color: "white",
+	font: {fontFamily: "Verdana", fontWeight: "bold", fontSize: 12},
+	backgroundColor: "#d92332",
+	border: 2,
+	borderColor: "white",
+});
+
+
+var movieList = [
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."}, 
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."},
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."},
+	{title: "Generic Movie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros libero, tincidunt nec tincidunt sit amet, scelerisque eget massa. Nullam ac mattis velit. Sed tellus ligula, tempus eget varius vitae, faucibus nec neque. Vestibulum in risus mi. Integer gravida, mauris sed auctor commodo, est libero blandit orci, eu tempor lacus."}
+];
+
+var movieTable = Ti.UI.createTableView({
+	top: 70
+});
+
+if(Ti.Platform.name ==="iPhone OS"){
+	movieTable.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+movieTableSection({
+	headerTitle: "Movies based on your viewing history"
+});
+
+suggestScreen.add(newReleaseButton, suggestButton, myPicksButton, movieTable, movieTableSection);
+suggestScreen.open();

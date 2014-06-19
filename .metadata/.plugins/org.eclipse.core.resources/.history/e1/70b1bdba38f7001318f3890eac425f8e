@@ -1,0 +1,26 @@
+var JSON = [
+	{title: "Rip Ride Rockit", description: "A high speed rollercoaster with a music them.  Guests can pick a song from a preselected group of genres before riding the ride.  Also has the world's largest non-inverted loop. "}, 
+	{title: "Twister: Ride It Out", description: "Guests step onto a live sound stage as they experience the sounds, sights and feelings of a real life tornado."},
+	{title: "Disaster", description: "Guests are cast as extras for Mr. Kincaid's next big disaster movie, 'Mutha Nature'.  Climb aboard a subway train and prepare to sit through a. 8.0 earthquake deep below the heart of downtown Los Angeles."},
+	{title: "Men in Black: Alien Attack", description: "Alright recruits, suit up.  Aliens have crash landed in the heart of Manhatten and it's up to you to clean up the mess.  Aim for the thermal exhaust ports!'"}
+];
+
+
+for(var i=0, j=JSON.length; i<j; i++){
+	var tableRow = Ti.UI.createTableViewRow({
+		title: JSON[i].title,
+		desc: JSON[i].description,
+		hasDetail:true
+	});
+	JSONSection.add(tableRow);
+	tableRow.addEventListener("click", getDetail);
+} 
+
+	if(Ti.Platform.name === "iPhone OS"){
+		tableRow.hasChild = false;
+		tableRow.hasDetail = true;
+	}
+	
+var section = [movieSection];
+
+JSON.setData(section);

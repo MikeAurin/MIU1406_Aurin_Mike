@@ -1,11 +1,13 @@
 =run
 About\ Me\ MIU\:launchMode=run
 About\ Me\ MIU\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
-LAST_LAUNCH_TIMESTAMP=1403100638159
+LAST_LAUNCH_TIMESTAMP=1403128384152
 MIU\:launchMode=run
 MIU\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 Prototype\:launchMode=run
 Prototype\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
+Red\ Box\:launchMode=run
+Red\ Box\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103

@@ -1,0 +1,41 @@
+Titanium.UI.setBackgroundColor("#000");
+
+
+
+var islands = [
+	{title: "The Incredible Spiderman", description: "Calling all true believers...Spiderman needs your help to stop Dr. Octopus and his Sinsiter Syndicate from stealing the Statue of Liberty.  Hop in the Daily Bugle's Scoop vehicle and help your friendly neighborhood Spiderman before it's too late."},
+ 	{title: "Jurassic Park Adventure", description: "Take a relaxing ride through the river at Jurassic Park and become immersed in the prehistoric scenery and wildlife on this guided tour.  Don't worry.  The raptors are safely locked away in containment."}, 
+ 	{title: "Poseidon's Fury", description: "Journey deep into the Temple of Poseidon in search of the Golden Trident.  Your scheduled tour guide appears to have called in sick, although I'm sure your replacement, Taylor will be a suitable replacement."}, 
+ 	{title: "Cat in the Hat", description: "Hop aboard your comfy couch and take a spin with the Cat in the Hat himself as you go page by page through this beloved children's tale."}
+ ];
+
+for(var i=0, j=universal.length; i<j; i++){
+	var tableRow = Ti.UI.createTableViewRow({
+		title: universal[i].title,
+		desc: universal[i].description,
+		hasDetail:true
+	});
+	universalSection.add(tableRow);
+	tableRow.addEventListener("click", getDetail);
+} 
+
+for(var i=0, j=islands.length; i<j; i++){
+	var tableRow = Ti.UI.createTableViewRow({
+		title: islands[i].title,
+		desc: islands[i].description,
+		hasDetail: true
+	});
+	
+	
+	if(Ti.Platform.name === "iPhone OS"){
+		tableRow.hasChild = false;
+		tableRow.hasDetail = true;
+	}
+
+	islandsSection.add(tableRow);
+	tableRow.addEventListener("click", getDetail);
+};
+
+var parksSections = [universalSection, islandsSection];
+
+parks.setData(parksSections);

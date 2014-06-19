@@ -4,8 +4,8 @@ var mainWin = Ti.UI.createWindow({
 	backgroundColor: "#d92332"
 });
 
-var logo = Ti.UI.createImageView({
-	image: "redbox.png",
+var logo = Ti.UI.createLabel({
+	backgroundImage: "redbox.png",
 	top: 50,
 	height: 120,
 	width: "90%"

@@ -1,0 +1,10 @@
+loginPage = Ti.UI.createWindow({
+	top: 20,
+	backgroundColor: "#333"
+});
+
+var validLogins = ["mikeaurin@fullsail.edu", "vmcnichol@fullsail.com"];
+
+var 
+
+loginPage.open();

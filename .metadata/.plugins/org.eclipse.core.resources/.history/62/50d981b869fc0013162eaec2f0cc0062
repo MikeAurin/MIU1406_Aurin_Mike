@@ -1,0 +1,5 @@
+var options = Ti.UI.createWindow({
+	backgroundColor: "#333"
+});
+
+options.open();

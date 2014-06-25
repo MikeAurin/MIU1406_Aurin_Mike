@@ -1,0 +1,5 @@
+var locationPage = Ti.UI.createWindow({
+	backgroundColor: "#333"
+});
+
+locationPage.open();

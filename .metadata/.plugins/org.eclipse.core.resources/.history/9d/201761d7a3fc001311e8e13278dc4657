@@ -1,0 +1,69 @@
+var profileWindow = Ti.UI.createWindow({
+	top: 20,
+	backgroundColor: "#333"
+});
+
+var scrollView = Ti.UI.createScrollView({
+  contentWidth: 'auto%',
+  contentHeight: 'auto',
+  showVerticalScrollIndicator: true,
+  showHorizontalScrollIndicator: true,
+  height: '100%',
+  width: '100%'
+});
+
+var view = Ti.UI.createView({
+  backgroundColor:'#333',
+  borderRadius: 10,
+  top: 0,
+  height: 2000,
+  width: 1000
+});
+
+var title = Ti.UI.createLabel({
+	top: 10,
+	font: {fontFamily: "Verdana", fontSize: 30},
+	color: "white",
+	text: "Update Your Profile"
+});
+
+var userName = Ti.UI.createTextField({
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	color:'black',
+	hintText: "New Username",
+	top: 70,
+	left: 10,
+	width: 250,
+	height: 40,
+	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+});
+
+var password = Ti.UI.createTextField({
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	color:'black',
+	hintText: "New Password",
+	top: 130,
+	left: 10,
+	width: 250,
+	height: 40,
+	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+});
+
+var backButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "black",
+	title: "Back",
+	color: "white"
+});
+
+var exit = function(){
+	var backToStart = require("options");
+};
+
+backButton.addEventListener("click", exit);
+
+scrollView.add(view, title, userName, password);
+profileWindow.add(scrollView, backButton);
+profileWindow.open();

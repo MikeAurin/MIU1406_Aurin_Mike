@@ -1,0 +1,5 @@
+loginPage = Ti.UI.createWindow({
+	backgroundColor: "#333"
+});
+
+loginPage.open();

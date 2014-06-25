@@ -1,0 +1,20 @@
+var options = Ti.UI.createWindow({
+	backgroundColor: "#333",
+	top: 20
+});
+var buttonBar = Titanium.UI.createButton({
+    title: "My ,Profile",
+    backgroundColor:'white',
+    top: 40,
+    height:45,
+    width: "80%"
+});
+
+var openProfile = function(){
+	var open = require("profile");
+};
+
+buttonBar.addEventListener("click", openProfile);
+
+options.add(buttonBar);
+options.open();

@@ -1,0 +1,41 @@
+var profileWindow = Ti.UI.createWindow({
+	top: 20,
+	backgroundColor: "#333"
+});
+
+title = Ti.UI.createLabel({
+	top: 40,
+	font: {fontFamily: "Verdana", fontHeight: 42},
+	color: "white",
+	text: "Update Your Profile"
+});
+
+var userInput = Ti.UI.createTextField({
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	color:'black',
+	hintText: "New Username",
+	bottom: 150,
+	width: 250,
+	height: 40
+});
+
+var picker = Ti.UI.createPicker({
+  top:50
+});
+
+var data = [];
+data[0]=Ti.UI.createPickerRow({title:'Bananas'});
+data[1]=Ti.UI.createPickerRow({title:'Strawberries'});
+data[2]=Ti.UI.createPickerRow({title:'Mangos'});
+data[3]=Ti.UI.createPickerRow({title:'Grapes'});
+
+picker.add(data);
+picker.selectionIndicator = true;
+
+
+
+// must be after picker has been displayed
+picker.setSelectedRow(0, 2, false); // select Mangos
+
+profileWindow.add(title, picker);
+profileWindow.open();

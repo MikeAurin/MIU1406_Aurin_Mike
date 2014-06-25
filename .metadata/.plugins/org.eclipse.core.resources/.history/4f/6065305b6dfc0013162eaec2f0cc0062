@@ -1,0 +1,15 @@
+var options = Ti.UI.createWindow({
+	backgroundColor: "#333",
+	top: 20
+});
+var buttonBar = Titanium.UI.createButtonBar({
+    labels:['One', 'Two', 'Three'],
+    backgroundColor:'#336699',
+    top:50,
+    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+    height:25,
+    width:200
+});
+
+options.add(buttonBar);
+options.open();

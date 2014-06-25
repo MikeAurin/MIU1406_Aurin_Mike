@@ -1,0 +1,11 @@
+var options = Ti.UI.createWindow({
+	backgroundColor: "#333",
+	top: 20
+});
+
+var locationSettings = Ti.UI.createButtonBar({
+	
+})
+
+option.add(locationSettings);
+options.open();

@@ -1,0 +1,24 @@
+var locationPage = Ti.UI.createWindow({
+	backgroundColor: "#333"
+});
+
+var picker = Ti.UI.createPicker({
+  top:200
+});
+
+var data = [];
+data[0]=Ti.UI.createPickerRow({title:'University of Central Florida'});
+data[1]=Ti.UI.createPickerRow({title:'Full Sail University'});
+data[2]=Ti.UI.createPickerRow({title:'Florida State University'});
+data[3]=Ti.UI.createPickerRow({title:'University of Miami'});
+
+picker.add(data);
+picker.selectionIndicator = true;
+
+
+
+// must be after picker has been displayed
+picker.setSelectedRow(0, 2, false); // select Mangos
+
+locationPage.add(picker);
+locationPage.open();

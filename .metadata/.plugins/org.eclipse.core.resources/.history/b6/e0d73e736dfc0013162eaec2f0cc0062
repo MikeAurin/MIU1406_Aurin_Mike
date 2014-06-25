@@ -1,0 +1,15 @@
+var options = Ti.UI.createWindow({
+	backgroundColor: "#333",
+	top: 20
+});
+var buttonBar = Titanium.UI.createButtonBar({
+    labels:['Profile', 'Location', 'About Us'],
+    backgroundColor:'white',
+    top:50,
+    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+    height:45,
+    width: "100%"
+});
+
+options.add(buttonBar);
+options.open();

@@ -1,0 +1,6 @@
+var profileWindow = Ti.UI.createWindow({
+	top: 20,
+	backgroundColor: "#333"
+});
+
+profileWindow.open();

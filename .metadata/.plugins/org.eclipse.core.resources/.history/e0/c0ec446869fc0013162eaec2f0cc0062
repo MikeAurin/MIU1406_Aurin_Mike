@@ -1,0 +1,49 @@
+
+var win = Ti.UI.createWindow({
+	backgroundColor: "#333"
+});
+
+var hexCodes = ["#ff0000", "#ffffff", "#0000ff"];
+
+var textField = Ti.UI.createTextField({
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	color:'white',
+	top: 80,
+	left: 20,
+	width: 250,
+	height: 40
+});
+
+var buttonView = Ti.UI.createLabel({
+	backgroundColor: "#333",
+	width: 200,
+	height: 50,
+	text: "Select Color",
+	color: "white",
+	textAlign: "center",
+	bottom: 10
+});
+
+var getText = function(){
+	var i = 0;
+	while(textField.value != hexCodes[i]){
+		if(i === hexCodes.length){
+			break;
+		}else{
+			i++;
+		}
+	
+	}
+	if(textField.value === hexCodes[i]){
+		win.backgroundColor = textField.value;
+	}else{
+		alert("NO!");
+	}
+};
+
+buttonView.addEventListener("click", getText);
+
+win.add(buttonView);
+
+win.add(textField);
+win.open();

@@ -1,0 +1,21 @@
+var options = Ti.UI.createWindow({
+	backgroundColor: "#333",
+	top: 20
+});
+var buttonBar = Titanium.UI.createButtonBar({
+    labels:['Profile', 'Location', 'About Us'],
+    backgroundColor:'white',
+    top:2,
+    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+    height:45,
+    width: "100%"
+});
+
+var openProfile = function(){
+	var open = require("profile");
+};
+
+buttonBar.labels[0].addEventListener("click", openProfile);
+
+options.add(buttonBar);
+options.open();

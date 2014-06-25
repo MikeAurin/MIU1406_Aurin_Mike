@@ -1,0 +1,53 @@
+var options = Ti.UI.createWindow({
+	backgroundColor: "#333",
+	top: 20
+});
+var profileButton = Ti.UI.createButton({
+    title: "My Profile",
+    backgroundColor:'white',
+    top: 40,
+    height:45,
+    width: "80%",
+    borderRadius: 5
+});
+
+var openProfile = function(){
+	var goToProfile = require("profile");
+};
+
+profileButton.addEventListener("click", openProfile);
+
+var locationButton = Ti.UI.createButton({
+    title: "Location Settings",
+    backgroundColor:'white',
+    top: 100,
+    height:45,
+    width: "80%",
+    borderRadius: 5
+});
+
+var openLocation = function(){
+	var goToLocation = require("location");
+};
+
+locationButton.addEventListener("click", openLocation);
+
+
+var aboutUsButton = Ti.UI.createButton({
+    title: "About Us",
+    backgroundColor:'white',
+    top: 160,
+    height:45,
+    width: "80%",
+    borderRadius: 5
+});
+
+var openAboutUs = function(){
+	var goToAboutUs = require("aboutUs");
+};
+
+aboutUsButton.addEventListener("click", openAboutUs);
+
+
+options.add(profileButton, locationButton, aboutUsButton);
+options.open();

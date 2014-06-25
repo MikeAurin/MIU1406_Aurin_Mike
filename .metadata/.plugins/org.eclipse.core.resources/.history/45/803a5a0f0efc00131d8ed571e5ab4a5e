@@ -1,0 +1,13 @@
+Ti.UI.setBackgroundColor("white");
+
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#333",
+});
+
+var title = Ti.UI.createLabel({
+	text: "Utilities",
+	textAlign: "center"
+});
+
+mainWin.add(title);
+mainWin.open();

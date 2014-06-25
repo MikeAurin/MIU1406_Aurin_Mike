@@ -1,0 +1,22 @@
+Ti.UI.setBackgroundColor("white");
+
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#333",
+});
+
+var title = Ti.UI.createLabel({
+	text: "Utilities",
+	textAlign: "center",
+	top: 30,
+	font: {fontFamily: "Verdana", fontSize: 42},
+	color: "white"
+});
+
+var image = Ti.UI.createImageView({
+	image: "settings.ico",
+	top: 70,
+	width: "80%"
+});
+
+mainWin.add(title, image);
+mainWin.open();

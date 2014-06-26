@@ -16,7 +16,7 @@ var view = Ti.UI.createView({
   backgroundColor:'#333',
   borderRadius: 10,
   top: 0,
-  height: 2000,
+  height: 1150,
   width: 1000
 });
 
@@ -30,7 +30,7 @@ var title = Ti.UI.createLabel({
 var userName = Ti.UI.createTextField({
 	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	color:'black',
-	hintText: "New Username",
+	hintText: "New Email Address",
 	top: 70,
 	left: 10,
 	width: 250,
@@ -43,14 +43,56 @@ var password = Ti.UI.createTextField({
 	color:'black',
 	hintText: "New Password",
 	top: 130,
+	passwordMask: true,
 	left: 10,
 	width: 250,
 	height: 40,
 	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
 });
 
+var emailAlert = Ti.UI.createLabel({
+	top: 195,
+	left: 50,
+	font: {fontFamily: "Verdana", fontSize: 12},
+	color: "white",
+	text: "Email me about product news and updates",
+});
+
+var checkBox = Ti.UI.createButton({
+    top: 190,
+    left: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#white',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    color: '#fff',
+    value: false 
+});
+ 
+checkBox.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkBox.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkBox.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+
 var avatarLabel = Ti.UI.createLabel({
-	top: 190,
+	top: 240,
 	left: 10,
 	font: {fontFamily: "Verdana", fontSize: 22},
 	color: "white",
@@ -58,23 +100,16 @@ var avatarLabel = Ti.UI.createLabel({
 });
 
 var avatar = Ti.UI.createImageView({
-	top: 220,
+	top: 270,
 	left: 10,
 	width: 150,
 	image: "me.jpg"
 });
 
-var saveButton = Ti.UI.createButton({
-	bottom: 0,
-	height: 50,
-	width: "100%",
-	backgroundColor: "black",
-	title: "Save Changes",
-	color: "white"
-});
+
 
 var aboutMeLabel = Ti.UI.createLabel({
-	top: 430,
+	top: 480,
 	left: 10,
 	font: {fontFamily: "Verdana", fontSize: 22},
 	color: "white",
@@ -86,41 +121,68 @@ var aboutMe = Ti.UI.createTextArea({
   font: {fontSize: 20, fontFamily: "Verdana"},
   textAlign: 'left',
   borderRadius: 3,
-  top: 460,
+  top: 510,
   width: 300, 
   height : 300,
   color: "black"
 });
 
-var genderLabel = Ti.UI.createLabel({
-	top: 780,
+var schoolLabel = Ti.UI.createLabel({
+	top: 840,
 	left: 10,
 	font: {fontFamily: "Verdana", fontSize: 22},
 	color: "white",
-	text: "Gender",
+	text: "Select Your University",
 });
 
-var gender = Ti.UI.createPicker({
-  	top: 810,
-  	height: 60,
- 	left: 10,
- 	width: 300
+var schools = Ti.UI.createPicker({
+  top: 870
 });
 
 var data = [];
-data[0]=Ti.UI.createPickerRow({title:'Male'});
-data[1]=Ti.UI.createPickerRow({title:'Female'});
+data[0]=Ti.UI.createPickerRow({title:'Full Sail University'});
+data[1]=Ti.UI.createPickerRow({title:'University of Central Florida'});
+data[2]=Ti.UI.createPickerRow({title:'Florida State University'});
+data[3]=Ti.UI.createPickerRow({title:'University of Miami'});
+
+schools.add(data);
+schools.selectionIndicator = true;
 
 
-gender.add(data);
-gender.selectionIndicator = true;
+schools.setSelectedRow(1); 
+
+var saveButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "black",
+	title: "Save Changes",
+	color: "white"
+});
 
 var saveChanges = function(){
-	var options = require("options");
-};
+	var confirm = Titanium.UI.createAlertDialog({
+        title: 'Confirm Changes',
+        message: 'Continue and Save?',
+        buttonNames: ['Yes', 'No'],
+        cancel: 1
+});
 
+confirm.addEventListener('click', function(e){
+        if (e.cancel === e.index || e.cancel === true) {
+        return false;
+        }
+        if (e.index === 0){
+                profileWindow.close();
+        }
+});
+
+confirm.show();
+
+};
 saveButton.addEventListener("click", saveChanges);
 
-scrollView.add(view, title, userName, password, avatarLabel, avatar, aboutMe, aboutMeLabel, genderLabel, gender);
+
+scrollView.add(view, title, userName, password, emailAlert, checkBox, avatarLabel, avatar, aboutMe, aboutMeLabel, schoolLabel, schools);
 profileWindow.add(scrollView, saveButton);
 profileWindow.open();

@@ -1,0 +1,89 @@
+var locationPage = Ti.UI.createWindow({
+	backgroundColor: "#333",
+	top: 20
+});
+
+var locationText = Ti.UI.createLabel({
+	top: 10,
+	font: {fontFamily: "Verdana", fontSize: 28},
+	color: "white",
+	text: "Update Your Location Settings"
+});
+
+checkLabel = Ti.UI.createLabel({
+	top: 40,
+	left: 20,
+	text: "Use my location via GPS",
+	color: "white"
+});
+
+var checkBox = Ti.UI.createButton({
+    top: 40,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false //value is a custom property in this casehere.
+});
+ 
+//Attach some simple on/off actions
+checkBox.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkBox.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkBox.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+
+var saveButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "black",
+	title: "Save Changes",
+	color: "white"
+});
+
+var saveChanges = function(){
+	var confirm = Titanium.UI.createAlertDialog({
+        title: 'Confirm Changes',
+        message: 'Continue and Save Changes?',
+        buttonNames: ['Yes', 'No'],
+        cancel: 1
+});
+
+confirm.addEventListener('click', function(e){
+        if (e.cancel === e.index || e.cancel === true) {
+        return false;
+        }
+        if (e.index === 0){
+                locationPage.close();
+        }
+});
+
+confirm.show();
+
+};
+saveButton.addEventListener("click", saveChanges);
+
+
+locationPage.add(locationText, checkLabel, checkBox, saveButton);
+locationPage.open();

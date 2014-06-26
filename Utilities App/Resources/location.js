@@ -3,36 +3,45 @@ var locationPage = Ti.UI.createWindow({
 	top: 20
 });
 
-var checkbox = Ti.UI.createButton({
-    title: '',
-    top: 10,
-    right: 10,
+var locationText = Ti.UI.createLabel({
+	top: 10,
+	font: {fontFamily: "Verdana", fontSize: 30},
+	color: "white",
+	text: "Location Settings"
+});
+
+checkLabel = Ti.UI.createLabel({
+	top: 75,
+	left: 10,
+	text: "Use my location via GPS",
+	color: "white"
+});
+
+var checkBox = Ti.UI.createButton({
+    top: 70,
+    right: 60,
     width: 30,
     height: 30,
     borderColor: '#666',
     borderWidth: 2,
     borderRadius: 3,
     backgroundColor: '#aaa',
-    backgroundImage: 'none',
     color: '#fff',
-    font:{fontSize: 25, fontWeight: 'bold'},
-    value: false //value is a custom property in this casehere.
 });
  
-//Attach some simple on/off actions
-checkbox.on = function() {
+checkBox.on = function() {
     this.backgroundColor = '#007690';
     this.title='\u2713';
     this.value = true;
 };
  
-checkbox.off = function() {
+checkBox.off = function() {
     this.backgroundColor = '#aaa';
     this.title='';
     this.value = false;
 };
  
-checkbox.addEventListener('click', function(e) {
+checkBox.addEventListener('click', function(e) {
     if(false == e.source.value) {
         e.source.on();
     } else {
@@ -40,23 +49,92 @@ checkbox.addEventListener('click', function(e) {
     }
 });
 
-var picker = Ti.UI.createPicker({
-  top:200
+var city = Ti.UI.createTextField({
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	color:'black',
+	hintText: "City",
+	top: 120,
+	passwordMask: true,
+	left: 10,
+	width: 250,
+	height: 40,
+	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+});
+
+var state = Ti.UI.createTextField({
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	color:'black',
+	hintText: "State",
+	top: 170,
+	passwordMask: true,
+	left: 10,
+	width: 250,
+	height: 40,
+	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+});
+
+var zip = Ti.UI.createTextField({
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	color:'black',
+	hintText: "Zip Code",
+	top: 220,
+	passwordMask: true,
+	left: 10,
+	width: 250,
+	height: 40,
+	keyboardType: Titanium.UI.KEYBOARD_DEFAULT,
+	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+});
+
+var country = Ti.UI.createPicker({
+  top: 270,
+  height: 50,
+  left: 10,
+  width: 200
 });
 
 var data = [];
-data[0]=Ti.UI.createPickerRow({title:'University of Central Florida'});
-data[1]=Ti.UI.createPickerRow({title:'Full Sail University'});
-data[2]=Ti.UI.createPickerRow({title:'Florida State University'});
-data[3]=Ti.UI.createPickerRow({title:'University of Miami'});
+data[0]=Ti.UI.createPickerRow({title:'United States'});
+data[1]=Ti.UI.createPickerRow({title:'Canada'});
+data[2]=Ti.UI.createPickerRow({title:'Mexico'});
 
-picker.add(data);
-picker.selectionIndicator = true;
-
+country.add(data);
+country.selectionIndicator = true;
 
 
-// must be after picker has been displayed
-picker.setSelectedRow(0, 2, false); // select Mangos
+country.setSelectedRow(1); 
 
-locationPage.add(checkbox, picker);
+var saveButton = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	width: "100%",
+	backgroundColor: "black",
+	title: "Save Changes",
+	color: "white"
+});
+
+var saveChanges = function(){
+	var confirm = Titanium.UI.createAlertDialog({
+        title: 'Confirm Changes',
+        message: 'Continue and Save Changes?',
+        buttonNames: ['Yes', 'No'],
+        cancel: 1
+});
+
+confirm.addEventListener('click', function(e){
+        if (e.cancel === e.index || e.cancel === true) {
+        return false;
+        }
+        if (e.index === 0){
+                locationPage.close();
+        }
+});
+
+confirm.show();
+
+};
+saveButton.addEventListener("click", saveChanges);
+
+
+locationPage.add(locationText, checkLabel, checkBox, city, state, zip, country, saveButton);
 locationPage.open();

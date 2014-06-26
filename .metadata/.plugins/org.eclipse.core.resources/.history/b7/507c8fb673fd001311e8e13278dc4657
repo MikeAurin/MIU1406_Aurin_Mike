@@ -54,16 +54,27 @@ var openButton = Ti.UI.createButton({
 	backgroundColor: "black"
 });
 
-
-
 var verify = function(){
-if ((validLogin === "Mikeaurin@fullsail.edu") && (validPassword === "fullsail")) {		
+if(validLogin === "Mikeaurin@fullsail.edu")
+	var open = require("options"); 
+else
+	alert("Access Denied!"); 
+};
+
+/*
+var verify = function(){
+if (validLogin !== "mikeaurin@fullsail.edu") {
+	var open = require("options");
+		} else { 
+			alert("Incorrect Email");
+}		if (validPassword !== "fullsail") {
 		var open = require("options");
 			} else {
 		alert("Incorrect Password");
 	};
 };
-/*
+
+
 var verify = function(){
 	var i;
 	if(i = validLogin){

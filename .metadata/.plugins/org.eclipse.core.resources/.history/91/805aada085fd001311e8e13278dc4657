@@ -54,10 +54,10 @@ var openButton = Ti.UI.createButton({
 	backgroundColor: "black"
 });
 
-
+verify(validLogin, validPassword);
 
 var verify = function(){
-if ((validLogin === "Mikeaurin@fullsail.edu") && (validPassword === "fullsail")) {		
+if ((validLogin === "mikeaurin@fullsail.edu") && (validPassword === "fullsail")) {		
 		var open = require("options");
 			} else {
 		alert("Incorrect Password");

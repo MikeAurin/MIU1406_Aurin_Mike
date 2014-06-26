@@ -55,14 +55,20 @@ var openButton = Ti.UI.createButton({
 });
 
 
+verify(validLogin, validPassword);
 
-var verify = function(){
-if ((validLogin === "Mikeaurin@fullsail.edu") && (validPassword === "fullsail")) {		
-		var open = require("options");
-			} else {
-		alert("Incorrect Password");
-	};
+var verify = function(login, password){
+if (validLogin == "mikeaurin@fullsail.edu") {
+var open = require("options");
+} else if {
+alert("Incorrect Email");
+} else if {(validPassword == "fullsail"); {
+var open = require("options");
+} else {
+alert("Incorrect Password");
 };
+};
+
 /*
 var verify = function(){
 	var i;

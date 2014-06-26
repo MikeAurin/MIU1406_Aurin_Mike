@@ -58,5 +58,5 @@ picker.selectionIndicator = true;
 // must be after picker has been displayed
 picker.setSelectedRow(0, 2, false); // select Mangos
 
-locationPage.add(checkbox);
+locationPage.add(checkbox, picker);
 locationPage.open();

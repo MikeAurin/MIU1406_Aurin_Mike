@@ -29,8 +29,7 @@ var userInput = Ti.UI.createTextField({
 	bottom: 150,
 	align: "center",
 	width: 250,
-	height: 40,
-	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+	height: 40
 });
 
 var passwordInput = Ti.UI.createTextField({
@@ -41,8 +40,7 @@ var passwordInput = Ti.UI.createTextField({
 	bottom: 90,
 	align: "center",
 	width: 250,
-	height: 40,
-	clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+	height: 40
 });
 
 var openButton = Ti.UI.createButton({

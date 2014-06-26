@@ -51,16 +51,16 @@ var password = Ti.UI.createTextField({
 
 var avatarLabel = Ti.UI.createLabel({
 	top: 190,
-	left: 10,
 	font: {fontFamily: "Verdana", fontSize: 22},
 	color: "white",
 	text: "Change Avatar",
+	left: 10
 });
 
 var avatar = Ti.UI.createImageView({
 	top: 220,
-	left: 10,
-	width: 150,
+	right: 10,
+	height: 170,
 	image: "me.jpg"
 });
 
@@ -73,54 +73,12 @@ var saveButton = Ti.UI.createButton({
 	color: "white"
 });
 
-var aboutMeLabel = Ti.UI.createLabel({
-	top: 430,
-	left: 10,
-	font: {fontFamily: "Verdana", fontSize: 22},
-	color: "white",
-	text: "Update Bio",
-});
-
-var aboutMe = Ti.UI.createTextArea({
-  hintText: "Tell",
-  font: {fontSize: 20, fontFamily: "Verdana"},
-  textAlign: 'left',
-  borderRadius: 3,
-  top: 460,
-  width: 300, 
-  height : 300,
-  color: "black"
-});
-
-var genderLabel = Ti.UI.createLabel({
-	top: 780,
-	left: 10,
-	font: {fontFamily: "Verdana", fontSize: 22},
-	color: "white",
-	text: "Gender",
-});
-
-var gender = Ti.UI.createPicker({
-  	top: 810,
-  	height: 60,
- 	left: 10,
- 	width: 300
-});
-
-var data = [];
-data[0]=Ti.UI.createPickerRow({title:'Male'});
-data[1]=Ti.UI.createPickerRow({title:'Female'});
-
-
-gender.add(data);
-gender.selectionIndicator = true;
-
 var saveChanges = function(){
 	var options = require("options");
 };
 
 saveButton.addEventListener("click", saveChanges);
 
-scrollView.add(view, title, userName, password, avatarLabel, avatar, aboutMe, aboutMeLabel, genderLabel, gender);
+scrollView.add(view, title, userName, password, avatarLabel, avatar);
 profileWindow.add(scrollView, saveButton);
 profileWindow.open();

@@ -93,7 +93,7 @@ var aboutMe = Ti.UI.createTextArea({
 });
 
 var genderLabel = Ti.UI.createLabel({
-	top: 780,
+	top: 570,
 	left: 10,
 	font: {fontFamily: "Verdana", fontSize: 22},
 	color: "white",
@@ -101,10 +101,7 @@ var genderLabel = Ti.UI.createLabel({
 });
 
 var gender = Ti.UI.createPicker({
-  	top: 810,
-  	height: 60,
- 	left: 10,
- 	width: 300
+  top:600
 });
 
 var data = [];
